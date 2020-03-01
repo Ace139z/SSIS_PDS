@@ -79,10 +79,10 @@ Connect strings are loaded with passwords to allow for automation of SSIS ETL ba
     -- 2) Solution Level Configurations
 
 
-    -- 2.1) jc
+    -- 2.1) LDSBC_IT243_DZG
 	
     DELETE FROM dbo.[SSIS Configurations]
-     WHERE ConfigurationFilter = 'jc';
+     WHERE ConfigurationFilter = 'LDSBC_IT243_DZG';
 	
 
 	-- 2.1.1) v_data_share_root
@@ -93,8 +93,8 @@ Connect strings are loaded with passwords to allow for automation of SSIS ETL ba
                                         , ConfiguredValueType)
     VALUES
           (
-           'jc'
-		 , 'C:\Users\z035330\Documents\JJAUSSI\Other\JC\projects\LDSBC\IT_243\repos\DFNB_dw\txt_files\'
+           'LDSBC_IT243_DZG'
+		 , 'C:\Users\Zack Gentry\Documents\IT243\DFNB_src\txt_files\'
          , '\Package.Variables[User::v_data_share_root].Properties[Value]'
          , 'String'
           );
@@ -108,10 +108,10 @@ Connect strings are loaded with passwords to allow for automation of SSIS ETL ba
     -- 3) Package level configurations
 
 
-    -- 3.1) SSIS_PDS_Template
+    -- 3.1) SSIS_PDS_Template_DZG
 
     DELETE FROM dbo.[SSIS Configurations]
-     WHERE ConfigurationFilter = 'SSIS_PDS_Template';
+     WHERE ConfigurationFilter = 'SSIS_PDS_Template_DZG';
 	
 
 	-- 3.1.1) v_data_share_root
@@ -122,8 +122,8 @@ Connect strings are loaded with passwords to allow for automation of SSIS ETL ba
                                         , ConfiguredValueType)
     VALUES
           (
-           'SSIS_PDS_Template'
-		 , 'C:\Users\z035330\Documents\JJAUSSI\Other\JC\projects\LDSBC\IT_243\repos\DFNB_dw\txt_files\'
+           'SSIS_PDS_Template_DZG'
+		 , 'C:\Users\Zack Gentry\Documents\IT243\DFNB_src\txt_files\'
          , '\Package.Variables[User::v_data_share_root].Properties[Value]'
          , 'String'
           );
