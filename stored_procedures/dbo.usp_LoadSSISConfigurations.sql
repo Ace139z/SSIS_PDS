@@ -120,13 +120,31 @@ Connect strings are loaded with passwords to allow for automation of SSIS ETL ba
     -- 3) Package level configurations
 
 
-    -- 3.1) SSIS_PDS_Template_DZG
+    -- 3.1) LoadDFNB3_DZG
+
+    DELETE FROM dbo.[SSIS Configurations]
+     WHERE ConfigurationFilter = 'LoadDFNB3_DZG';
+	
+	-- 3.2) SSIS_PDS_Template_DZG
 
     DELETE FROM dbo.[SSIS Configurations]
      WHERE ConfigurationFilter = 'SSIS_PDS_Template_DZG';
-	
 
 	-- 3.1.1) v_data_share_root
+
+    INSERT INTO dbo.[SSIS Configurations](ConfigurationFilter
+                                        , ConfiguredValue
+                                        , PackagePath
+                                        , ConfiguredValueType)
+    VALUES
+          (
+           'LoadDFNB3_DZG'
+		 , 'C:\Users\Zack Gentry\Documents\IT243\DFNB_src\txt_files\'
+         , '\Package.Variables[User::v_data_share_root].Properties[Value]'
+         , 'String'
+          );
+
+		  -- 3.2.1) v_data_share_root
 
     INSERT INTO dbo.[SSIS Configurations](ConfigurationFilter
                                         , ConfiguredValue
@@ -139,7 +157,6 @@ Connect strings are loaded with passwords to allow for automation of SSIS ETL ba
          , '\Package.Variables[User::v_data_share_root].Properties[Value]'
          , 'String'
           );
-
 
 END;
 
